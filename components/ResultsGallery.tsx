@@ -166,19 +166,19 @@ export function ResultsGallery({
             <div className="flex-1" />
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={getNetflixUrl(bestMatch.title)}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-black px-8 md:px-12 py-3 md:py-4 rounded-md font-black text-base md:text-lg hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 flex-1 md:flex-none"
+              className="bg-white text-black px-6 md:px-12 py-3.5 md:py-4 rounded-md font-black text-sm md:text-lg hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 flex-1 md:flex-none whitespace-nowrap"
             >
               <Play fill="black" size={18} className="md:w-5 md:h-5" /> WATCH ON
               NETFLIX
             </a>
             <button
               onClick={() => setSelectedMovie(bestMatch)}
-              className="px-6 md:px-8 py-3 md:py-4 rounded-md font-black text-base md:text-lg border-2 border-white/20 text-white hover:bg-white/10 transition-all flex items-center justify-center gap-2 flex-1 md:flex-none"
+              className="px-6 md:px-8 py-3.5 md:py-4 rounded-md font-black text-sm md:text-lg border-2 border-white/20 text-white hover:bg-white/10 transition-all flex items-center justify-center gap-2 flex-1 md:flex-none whitespace-nowrap"
             >
               <Info size={18} className="md:w-5 md:h-5" /> MORE INFO
             </button>
@@ -264,7 +264,7 @@ function MovieCard({
               e.stopPropagation();
               onNetflix();
             }}
-            className="w-full rounded bg-white py-2 text-sm font-black text-black transition-colors hover:bg-gray-200"
+            className="w-full rounded bg-white py-2.5 text-xs font-black text-black transition-colors hover:bg-gray-200 whitespace-nowrap"
           >
             Play on Netflix
           </button>
@@ -273,7 +273,7 @@ function MovieCard({
               e.stopPropagation();
               onDetails();
             }}
-            className="w-full rounded border border-white/40 py-2 text-sm font-black text-white transition-colors hover:bg-white/10"
+            className="w-full rounded border border-white/40 py-2.5 text-xs font-black text-white transition-colors hover:bg-white/10 whitespace-nowrap"
           >
             More Info
           </button>

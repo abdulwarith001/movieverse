@@ -53,28 +53,30 @@ export default function Home() {
               <div className="flex flex-col gap-6 w-full max-w-2xl mx-auto">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-rose-500 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
-                  <div className="relative flex items-center bg-zinc-900/90 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-2xl">
-                    <Sparkles
-                      className="ml-5 text-primary shrink-0"
-                      size={20}
-                    />
-                    <input
-                      type="text"
-                      placeholder="What's your vibe? (e.g. spooky 80s space horror)"
-                      value={magicPrompt}
-                      onChange={(e) => setMagicPrompt(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" && magicPrompt.length > 3) {
-                          magicSearch(magicPrompt);
-                        }
-                      }}
-                      className="w-full bg-transparent py-5 pl-4 pr-24 text-base md:text-lg text-white focus:outline-none placeholder:text-zinc-500"
-                    />
+                  <div className="relative flex flex-col md:flex-row items-stretch md:items-center bg-zinc-900/90 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden shadow-2xl">
+                    <div className="flex items-center flex-1">
+                      <Sparkles
+                        className="ml-5 text-primary shrink-0"
+                        size={20}
+                      />
+                      <input
+                        type="text"
+                        placeholder="What's your vibe? (e.g. spooky 80s space horror)"
+                        value={magicPrompt}
+                        onChange={(e) => setMagicPrompt(e.target.value)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" && magicPrompt.length > 3) {
+                            magicSearch(magicPrompt);
+                          }
+                        }}
+                        className="w-full bg-transparent py-5 pl-4 pr-4 text-base md:text-lg text-white focus:outline-none placeholder:text-zinc-500"
+                      />
+                    </div>
                     <button
                       onClick={() =>
                         magicPrompt.length > 3 && magicSearch(magicPrompt)
                       }
-                      className="absolute right-3 px-5 py-2.5 bg-primary text-white text-sm font-black rounded-lg hover:scale-105 active:scale-95 transition-all"
+                      className="m-3 md:m-0 md:absolute md:right-3 px-6 py-4 md:py-2.5 bg-primary text-white text-sm font-black rounded-lg hover:scale-105 active:scale-95 transition-all whitespace-nowrap"
                     >
                       AI SEARCH
                     </button>
